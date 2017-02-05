@@ -11,7 +11,7 @@ import org.apache.commons.csv.*;
 import java.io.*;
 
 public class WordLength2 {
-
+    
     public int indexOfMax(int[] values){
         int maxLength =0;
         int indexOfMax =0;
@@ -23,7 +23,7 @@ public class WordLength2 {
             }
         }
         return indexOfMax;
-}
+    }
     
     public void countWordLengths(FileResource resource, int[] counts){
         
@@ -43,6 +43,7 @@ public class WordLength2 {
     
    public void test_countWordLengths(){
        FileResource resource = new FileResource("data/smallHamlet.txt");
+       //FileResource resource = new FileResource("data/wordsLotsOfEs.txt");       
        int[] counts = new int[30];
        countWordLengths(resource, counts);
        System.out.println("The End.");
