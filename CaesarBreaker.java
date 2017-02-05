@@ -20,7 +20,7 @@ public class CaesarBreaker {
        
        String message1 = halfOfString(encrypted,0);
        String message2 = halfOfString(encrypted,1);
-       
+       StringBuilder theAnswer = new StringBuilder(encrypted);
        int key1= getKey(message1);
        int key2= getKey(message2);
        
@@ -28,22 +28,26 @@ public class CaesarBreaker {
        String d_message2=cc1.encrypt(message2,(26-key2));
        
        //build up the final answer
-       StringBuilder theAnswer = new StringBuilder(encrypted);
        
-       for (int k=0; k<(message1.length()-1);k++){
+       for (int k=0; k<(message1.length());k++){
            theAnswer.setCharAt((2*k), d_message1.charAt(k) );
            }
            
-       for (int k=0; k<(message2.length()-1);k++){
+       for (int k=0; k<(message2.length());k++){
            theAnswer.setCharAt((2*k)+1, d_message2.charAt(k) );
            }
+           
+       System.out.println(key1+" "+key2+" " + theAnswer.toString());    
+        
+    
        return theAnswer.toString();    
     }
     
     public void test_decryptTwoKeys(){
-       FileResource resource = new FileResource("data/wordsLotsOfEsEncrypted.txt");
+       FileResource resource = new FileResource("data/mysteryTwoKeysPractice.txt");
        //FileResource resource = new FileResource("data/wordsLotsOfEs.txt");
-       String message = resource.asString();
+       //String message = resource.asString();
+       String message = "Akag tjw Xibhr awoa aoee xakex znxag xwko";
        String d_TwoKeyMessage = decryptTwoKeys(message);
        
        System.out.println(message);
@@ -85,7 +89,7 @@ public class CaesarBreaker {
 }
 
    public void test_countLetters(){
-       FileResource resource = new FileResource("data/smallHamlet.txt");
+       FileResource resource = new FileResource("data/romeo.txt");
        //FileResource resource = new FileResource("data/wordsLotsOfEs.txt");
        String message = resource.asString();       
    

@@ -42,7 +42,7 @@ public class WordLength2 {
     }
     
    public void test_countWordLengths(){
-       FileResource resource = new FileResource("data/smallHamlet.txt");
+       FileResource resource = new FileResource("data/lotsOfWords.txt");
        //FileResource resource = new FileResource("data/wordsLotsOfEs.txt");       
        int[] counts = new int[30];
        countWordLengths(resource, counts);

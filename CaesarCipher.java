@@ -71,9 +71,9 @@ public void testCaesar() {
  }
     
  public void test_encryptTwoKeys(){
-     String input = "At noon be in the conference room with your hat on for a surprise party. YELL LOUD!";
-     int key1 = 8;
-     int key2 = 21;
+     String input = "Eren and Emily have evil eerie green eyes";
+     int key1 = 22;
+     int key2 = 19;
      System.out.println(input);
      System.out.println(encryptTwoKeys(input, key1, key2));
 }
