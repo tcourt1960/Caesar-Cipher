@@ -14,7 +14,7 @@ public class CaesarCipher2 {
     
     private String alphabet;
     private String shiftedAlphabet;
-    int mainKey;
+    private int mainKey;
     
     public CaesarCipher2(int key){
         
