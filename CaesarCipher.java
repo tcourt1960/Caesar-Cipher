@@ -2,15 +2,19 @@
 /**
  * Write a description of CaesarCipher here.
  * 
- * @author (your name) 
- * @version (a version number or a date)
- */
+ * @author Tom Courtney 
+ * @version Feb 2, 2017*/
 
 import edu.duke.*;
 import org.apache.commons.csv.*;
 import java.io.*;
 
 public class CaesarCipher {
+    
+public boolean isEven(int n){
+    if ((n % 2) == 0) return true; else return false; 
+}
+    
 public String encrypt(String input, int key) {
         //Make a StringBuilder with message (encrypted)
         StringBuilder encrypted = new StringBuilder(input);
@@ -41,10 +45,10 @@ public String encrypt(String input, int key) {
     }
     
 public void testCaesar() {
-   int key = 17;
+   int key = 15;
    FileResource fr = new FileResource();
    String message = fr.asString();
-   message = "First Legion";
+   message = "At noon be in the conference room with your hat on for a surprise party. YELL LOUD!";
    String encrypted = encrypt(message, key);
    System.out.println("key is " + key + "\n" + encrypted);
    String decrypted = encrypt(encrypted, 26-key);
@@ -52,22 +56,24 @@ public void testCaesar() {
 }
     
  public String encryptTwoKeys(String input, int key1, int key2){
- String oddInput = "";
- String evenInput = "";
-    for (int i=0; i< input.length();i=(i+2)){
-        oddInput = oddInput + input.charAt(i);
-        evenInput = evenInput + input.charAt(i+1);
+ String encrypt1 = encrypt(input, key1);
+ String encrypt2 = encrypt(input, key2);
+ StringBuilder encrypted= new StringBuilder(input);
+ 
+    for (int i=0; i< input.length();i=i+1){
+        if (isEven(i))
+            encrypted.setCharAt(i, encrypt1.charAt(i));
+            
+        if (!isEven(i))encrypted.setCharAt(i, encrypt2.charAt(i));
     }
     
-  
-    System.out.println(oddInput + "   " + evenInput);
-    return "Almost there";   
+    return encrypted.toString();   
  }
     
  public void test_encryptTwoKeys(){
-     String input = "First Legion";
-     int key1 = 23;
-     int key2 = 17;
+     String input = "Eren and Emily have evil eerie green eyes";
+     int key1 = 22;
+     int key2 = 19;
      System.out.println(input);
      System.out.println(encryptTwoKeys(input, key1, key2));
 }
