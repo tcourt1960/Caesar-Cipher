@@ -25,8 +25,8 @@ public class CaesarCipherTwo {
 
 
     public String encrypt(String input){
-     String encrypt1 = encrypt(input);
-     String encrypt2 = encrypt(input);
+     String encrypt1 = halfOfString(input,0);
+     String encrypt2 = halfOfString(input,1);
      StringBuilder encrypted= new StringBuilder(input);
  
     for (int i=0; i< input.length();i=i+1){
