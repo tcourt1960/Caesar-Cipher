@@ -1,0 +1,18 @@
+#BlueJ class context
+comment0.params=message\ start
+comment0.target=java.lang.String\ halfOfString(java.lang.String,\ int)
+comment1.params=n
+comment1.target=boolean\ isEven(int)
+comment2.params=message
+comment2.target=int[]\ countLetters(java.lang.String)
+comment3.params=
+comment3.target=void\ test_countLetters()
+comment4.params=values
+comment4.target=int\ maxIndex(int[])
+comment5.params=
+comment5.target=void\ simpleTests()
+comment6.params=e_message
+comment6.target=int\ getKey(java.lang.String)
+comment7.params=encrypted
+comment7.target=java.lang.String\ breakCaesarCipher(java.lang.String)
+numComments=8

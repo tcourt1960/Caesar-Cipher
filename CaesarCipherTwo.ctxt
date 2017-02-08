@@ -1,4 +1,12 @@
 #BlueJ class context
-comment0.params=key1\ key2
+comment0.params=k1\ k2
 comment0.target=CaesarCipherTwo(int,\ int)
-numComments=1
+comment1.params=input
+comment1.target=java.lang.String\ encrypt(java.lang.String)
+comment2.params=input
+comment2.target=java.lang.String\ decrypt(java.lang.String)
+comment3.params=n
+comment3.target=boolean\ isEven(int)
+comment4.params=message\ start
+comment4.target=java.lang.String\ halfOfString(java.lang.String,\ int)
+numComments=5

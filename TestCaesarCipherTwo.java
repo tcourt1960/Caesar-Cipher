@@ -63,12 +63,48 @@ public class TestCaesarCipherTwo {
     }
     
     public void simpleTests(){
-       FileResource resource = new FileResource("data/smallHamlet.txt");
+       FileResource resource = new FileResource("data/wordsLotsOfEs.txt");
        String message = resource.asString();
+
        CaesarCipherTwo cc = new CaesarCipherTwo(17,3);
        String encrypted = cc.encrypt(message);
+       String decrypted = cc.decrypt(encrypted);
+       System.out.println(message);
+       System.out.println(encrypted);
+       System.out.println(decrypted);
+       System.out.println("Encrypted message is: " + encrypted);
+       String codeBreak = breakCaesarCipher(encrypted);
+       System.out.println("Code break answer is: " + codeBreak);
+    }
+    
+    public int getKey(String e_message){
+       int[] freqs = countLetters(e_message);
+       int maxDex = maxIndex(freqs);
+       int dkey = maxDex-4;
+       if (maxDex < 4) {
+           dkey = 26 - (4-maxDex);
+        }
+        return dkey;
+    }
+    
+    public String breakCaesarCipher(String encrypted){
+       CaesarCipher cc1 = new CaesarCipher();
+       CaesarCipher cc2 = new CaesarCipher();
        
+       String message1 = halfOfString(encrypted,0);
+       String message2 = halfOfString(encrypted,1);
+    
+       int k1= getKey(message1);
+       int k2= getKey(message2);
        
+       System.out.println("This is CodeBreak Section");
+       System.out.println("Keys found are " + k1 + "  " + k2);
+       
+       CaesarCipherTwo cc3 = new CaesarCipherTwo(k1, k2);
+       
+       String theAnswer=cc3.decrypt(encrypted);
+       
+       return theAnswer.toString();
         
         
     }
