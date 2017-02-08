@@ -40,7 +40,7 @@ public class CaesarCipherTwo {
    }
        
    
-       public String halfOfString(String message, int start){
+    public String halfOfString(String message, int start){
        String halfMessage = "";
         for (int i= start; i<message.length(); i=i+2){
            halfMessage = halfMessage + message.charAt(i);
