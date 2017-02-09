@@ -46,9 +46,9 @@ public String encrypt(String input, int key) {
     
 public void testCaesar() {
    int key = 15;
-   FileResource fr = new FileResource();
-   String message = fr.asString();
-   message = "At noon be in the conference room with your hat on for a surprise party. YELL LOUD!";
+   //FileResource fr = new FileResource();
+   //String message = fr.asString();
+  String message = "Can you imagine life WITHOUT the internet AND computers in your pocket?";
    String encrypted = encrypt(message, key);
    System.out.println("key is " + key + "\n" + encrypted);
    String decrypted = encrypt(encrypted, 26-key);

@@ -40,7 +40,7 @@ public class TestCaesarCipherTwo {
     return counts;
     }
    
-   public void test_countLetters(){
+   private void test_countLetters(){
        FileResource resource = new FileResource("data/romeo.txt");
        //FileResource resource = new FileResource("data/wordsLotsOfEs.txt");
        String message = resource.asString();       
@@ -63,19 +63,23 @@ public class TestCaesarCipherTwo {
     }
     
     public void simpleTests(){
-       FileResource resource = new FileResource("data/wordsLotsOfEs.txt");
+       FileResource resource = new FileResource("data/mysteryTwoKeysQuiz.txt");
        String message = resource.asString();
-
-       CaesarCipherTwo cc = new CaesarCipherTwo(17,3);
-       String encrypted = cc.encrypt(message);
-       String decrypted = cc.decrypt(encrypted);
-       System.out.println(message);
-       System.out.println(encrypted);
-       System.out.println(decrypted);
-       System.out.println("Encrypted message is: " + encrypted);
+//        String message ="Hfs cpwewloj loks cd Hoto kyg Cyy.";
+//        CaesarCipherTwo cc = new CaesarCipherTwo(26-14,26-24);
+//        String encrypted = cc.encrypt(message);
+//        String decrypted = cc.decrypt(encrypted);
+//        System.out.println(message);
+//        System.out.println(encrypted);
+//        System.out.println(decrypted);
+//        System.out.println("Encrypted message is: " + encrypted);
+       
+       String encrypted = message;
        String codeBreak = breakCaesarCipher(encrypted);
        System.out.println("Code break answer is: " + codeBreak);
     }
+    
+    
     
     public int getKey(String e_message){
        int[] freqs = countLetters(e_message);

@@ -44,7 +44,7 @@ public class WordLengths {
 }
     
 void test_countWordLengths(){
-    String[] plays = {"smallHamlet.txt"};
+    String[] plays = {"errors.txt"};
     int[] counts = new int[30];
     for(int k=0; k < plays.length; k++){
         FileResource resource = new FileResource("data/" + plays[k]);
