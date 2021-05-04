@@ -2,8 +2,8 @@
 /**
  * Write a description of WordLength2 here.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author tcourt1960
+ * @version 2017
  */
 
 import edu.duke.*;
